@@ -26,7 +26,8 @@ Hal ini terjadi karena cara kerja *Asynchronous Programming* di Rust (khususnya 
    - **Drop:** Berfungsi untuk menutup saluran pengiriman.
 
 3. **Kasus `drop(spawner)` dihapus**
-  Fungsi `drop(spawner)` sangat krusial untuk manajemen siklus hidup *channel* (saluran komunikasi) di Rust. Di dalam kode ini, `Spawner` memegang bagian pengirim (*Sender*) dan `Executor` memegang bagian penerima (*Receiver*).
+
+   Fungsi `drop(spawner)` sangat krusial untuk manajemen siklus hidup *channel* (saluran komunikasi) di Rust. Di dalam kode ini, `Spawner` memegang bagian pengirim (*Sender*) dan `Executor` memegang bagian penerima (*Receiver*).
   
    Jika baris `drop(spawner)` dikomentari atau dihapus, program **tidak akan pernah berhenti (hang/idle)** meskipun semua tugas sudah selesai dicetak (`done!`). 
    
